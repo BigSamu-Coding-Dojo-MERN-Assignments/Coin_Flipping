@@ -40,10 +40,11 @@ function fiveHeads() {
             } else {
                 headsCount = 0;
             }
+            if (attempts >= 100) {
+                reject(`Sorry!!! You you reach ${attempts} tries. Let's try again`)
+            }
         }
-        if (attempts >= 100) {
-            reject(`You did ${attempts} tries, which is over 100. Let's play again`)
-        }
+        
         if (headsCount == 5){
             resolve(`It took ${attempts} tries to flip five "heads"`)
         }
